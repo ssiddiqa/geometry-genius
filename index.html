@@ -34,7 +34,174 @@
     </style>
 </head>
 
-<body>
+<body class="font-inter">
+    <header class="m-4 md:m-12">
+        <div class="navbar bg-[#1090D819] p-4">
+            <div class="navbar-start">
+                <div>
+                    <p class="text-2xl md:text-4xl font-bold">Interactive</p>
+                    <p class="text-base-400">Geometry Genius</p>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <a class="btn bg-info text-white w-auto md:w-20">Blog</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="m-4 md:m-12 flex flex-col lg:flex-row justify-between gap-4 flex-1">
+            <!-- shape card container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                <!-- 1st card -->
+                <div id="change" class="card bg-base-100 w-auto shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="/images/triangle.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Triangle</h2>
+                        <p>Area (A) = 0.5 x b x h</p>
+                        <div class="flex flex-col lg:flex-row gap-2">
+                            <div> <input type="text" placeholder="b" id="f-input"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                            <div> <input type="text" placeholder="h" id="s-input"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="fetchRes()" class="btn btn-info text-white text-xl mt-4">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2nd card -->
+                <div class="card bg-base-100 w-auto shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="/images/rectangle.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Rectangle</h2>
+                        <p>Area (A) = w x l</p>
+                        <div class="flex flex-col lg:flex-row gap-2">
+                            <div> <input type="text" placeholder="w" id="r-w"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                            <div> <input type="text" placeholder="l" id="r-h"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="fetchRec()" class="btn btn-info text-white text-xl mt-4">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3rd card -->
+                <div class="card bg-base-100 w-auto shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="/images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Parallelogram</h2>
+                        <p>Area (A) = b x h</p>
+                        <div class="flex flex-col lg:flex-row gap-2">
+                            <div> <input type="text" placeholder="b" id="p-w"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                            <div> <input type="text" placeholder="h" id="p-h"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                        </div>
+                        <div class="card-actions">
+                            <butto onclick="fetchPar()" class="btn btn-info text-white text-xl mt-4">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4th card -->
+                <div class="card bg-base-100 w-auto shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="/images/rhombus.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Rhombus</h2>
+                        <p>Area (A) = 0.5 x b x h</p>
+                        <div class="flex flex-col lg:flex-row gap-2">
+                            <div> <input type="text" placeholder="b" id="rm-w"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                            <div> <input type="text" placeholder="h" id="rm-l"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="fetchRom()" class="btn btn-info text-white text-xl mt-4">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5th card -->
+                <div class="card bg-base-100 w-auto shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="/images/pentagon.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Pentagon</h2>
+                        <p>Area (A) = 0.5 x p x b</p>
+                        <div class="flex flex-col lg:flex-row gap-2">
+                            <div> <input type="text" placeholder="p" id="pen-w"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                            <div> <input type="text" placeholder="b" id="pen-l"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="fetchPen()" class="btn btn-info text-white text-xl mt-4">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6th card -->
+                <div class="card bg-base-100 w-auto shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="/images/ellipse.png" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-2xl">Ellipse</h2>
+                        <p>Area (A) = &#960 x a x b</p>
+                        <div class="flex flex-col lg:flex-row gap-2">
+                            <div> <input type="text" placeholder="a" id="e-w"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                            <div> <input type="text" placeholder="b" id="e-l"
+                                    class="w-20 border-2 border-gray-400 px-2">
+                            </div>
+                            <span>cm</span>
+                        </div>
+                        <div class="card-actions">
+                            <button onclick="fetchEll()" class="btn btn-info text-white text-xl mt-4">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- area calculation container -->
+            <div class="w-auto  border-2 border-gray-200 rounded-lg flex-1">
+                <h3 class="text-3xl text-center p-3">
+                    <u>Area calculation</u>
+                </h3>
+                <ul id="result" class="text-center text-xl">
+
+                </ul>
+            </div>
+        </section>
+    </main>
     <script src="/js/main.js"></script>
 </body>
 
